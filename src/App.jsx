@@ -1,12 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './App.css'
-import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaGithub, FaLinkedin, FaBuilding, FaShieldAlt } from 'react-icons/fa'
-import { SiKotlin, SiJavascript, SiGnubash, SiProtonmail} from 'react-icons/si'
+import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaGithub, FaLinkedin, FaBuilding, FaShieldAlt, FaMoon, FaSun } from 'react-icons/fa'
+import { SiKotlin, SiJavascript, SiGnubash, SiProtonmail } from 'react-icons/si'
 import { GiMountainClimbing } from 'react-icons/gi'
 import { TbBrandAndroid } from 'react-icons/tb'
 
 function App() {
+  // Add theme state
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme || 'dark'; // Default to dark theme
+  });
+  
+  // Toggle theme function
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+  
+  // Apply theme on initial render
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const fadeInUp = {
     initial: { y: 50, opacity: 0 },
     whileInView: { y: 0, opacity: 1 },
@@ -51,6 +70,18 @@ function App() {
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+            
+            {/* Theme toggle button */}
+            <motion.button
+  className="theme-toggle"
+  onClick={toggleTheme}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  aria-label="Toggle theme"
+>
+  <FaMoon className="moon-icon" />
+  <FaSun className="sun-icon" />
+</motion.button>
           </motion.div>
         </div>
       </motion.nav>
