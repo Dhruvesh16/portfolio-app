@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:'/',
+  base: '/',
   build: {
     assetsDir: 'assets',
     rollupOptions: {
@@ -14,5 +14,17 @@ export default defineConfig({
         entryFileNames: 'assets/[name].[hash].js',
       }
     }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
+  server: {
+    // Ensure correct MIME type headers
+    headers: {
+      'Content-Type': 'text/javascript'
+    }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'react-icons']
   }
 })
