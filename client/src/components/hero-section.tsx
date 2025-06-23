@@ -26,7 +26,7 @@ export default function HeroSection() {
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6">
             <span className="text-slate-50">Hi, I'm </span>
-            <span className="bg-gradient-to-r from-cyber-blue to-cyber-green bg-clip-text text-transparent">Dhruvesh</span>
+            <span className="text-cyber-blue">Dhruvesh</span>
           </h1>
           
           <div className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-8 space-y-2">
