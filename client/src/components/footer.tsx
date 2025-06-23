@@ -11,16 +11,16 @@ export default function Footer() {
             <span className="text-slate-400 ml-2">• Cybersecurity Professional</span>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="text-slate-400 hover:text-cyber-blue transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/mvs-dhruvesh-370416172/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyber-blue transition-colors duration-300">
               <Linkedin size={24} />
             </a>
-            <a href="#" className="text-slate-400 hover:text-cyber-green transition-colors duration-300">
+            <a href="https://github.com/Dhruvesh16" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyber-green transition-colors duration-300">
               <Github size={24} />
             </a>
-            <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-300">
+            <a href="mailto:dhruvesh3466@protonmail.com" className="text-slate-400 hover:text-purple-400 transition-colors duration-300">
               <Twitter size={24} />
             </a>
-            <a href="#" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
+            <a href="https://vaultspec.in" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
               <Globe size={24} />
             </a>
           </div>

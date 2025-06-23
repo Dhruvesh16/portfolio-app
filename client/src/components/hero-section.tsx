@@ -1,4 +1,4 @@
-import { Download, Mail, Shield, Lock, Code, Smartphone } from "lucide-react";
+import { Mail, Shield, Lock, Code, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
@@ -41,11 +41,7 @@ export default function HeroSection() {
             pioneering the next generation of cybersecurity technology.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="bg-gradient-to-r from-cyber-blue to-blue-600 hover:from-blue-600 hover:to-cyber-blue text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              <Download className="mr-2" size={18} />
-              Download Resume
-            </Button>
+          <div className="flex justify-center">
             <Button 
               variant="outline"
               onClick={scrollToContact}

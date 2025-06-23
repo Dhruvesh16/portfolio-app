@@ -74,7 +74,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-200">Email</h3>
-                <p className="text-slate-400">dhruvesh@vaultspec.com</p>
+                <p className="text-slate-400">dhruvesh3466@protonmail.com</p>
               </div>
             </div>
             
@@ -84,7 +84,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-200">LinkedIn</h3>
-                <p className="text-slate-400">linkedin.com/in/dhruvesh-sec</p>
+                <p className="text-slate-400">linkedin.com/in/mvs-dhruvesh-370416172</p>
               </div>
             </div>
             
@@ -94,7 +94,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-200">GitHub</h3>
-                <p className="text-slate-400">github.com/dhruvesh-sec</p>
+                <p className="text-slate-400">github.com/Dhruvesh16</p>
               </div>
             </div>
             
@@ -104,7 +104,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-slate-200">VaultSpec</h3>
-                <p className="text-slate-400">vaultspec.com</p>
+                <p className="text-slate-400">vaultspec.in</p>
               </div>
             </div>
           </div>
