@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Custom cybersecurity theme colors */
+  --cyber-blue: hsl(207, 90%, 54%);
+  --cyber-green: hsl(158, 76%, 41%);
+  --cyber-dark: hsl(220, 39%, 11%);
+  --cyber-slate: hsl(215, 25%, 27%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .skill-card {
+    @apply transition-all duration-300;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+  }
+
+  .project-card {
+    @apply transition-all duration-300;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, hsl(207, 90%, 54%) 0%, hsl(158, 76%, 41%) 100%);
+  }
+
+  .matrix-bg::before {
+    content: '01010101';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200%;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(59, 130, 246, 0.1);
+    animation: matrix 20s linear infinite;
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  .text-cyber-blue {
+    color: hsl(207, 90%, 54%);
+  }
+
+  .text-cyber-green {
+    color: hsl(158, 76%, 41%);
+  }
+
+  .bg-cyber-dark {
+    background-color: hsl(220, 39%, 11%);
+  }
+
+  .bg-cyber-slate {
+    background-color: hsl(215, 25%, 27%);
+  }
+
+  .border-cyber-blue {
+    border-color: hsl(207, 90%, 54%);
+  }
+
+  .border-cyber-green {
+    border-color: hsl(158, 76%, 41%);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes glow {
+  from { 
+    box-shadow: 0 0 20px -10px hsl(207, 90%, 54%); 
+  }
+  to { 
+    box-shadow: 0 0 30px -5px hsl(207, 90%, 54%); 
+  }
+}
+
+@keyframes matrix {
+  0% { 
+    transform: translateY(-100%); 
+  }
+  100% { 
+    transform: translateY(100vh); 
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-matrix {
+  animation: matrix 20s linear infinite;
+}
