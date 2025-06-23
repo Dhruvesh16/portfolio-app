@@ -1,5 +1,6 @@
 import { Mail, Shield, Lock, Code, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profileImage from "@assets/image_1750693633154.png";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -18,9 +19,11 @@ export default function HeroSection() {
           {/* Professional Avatar */}
           <div className="mb-8 inline-block">
             <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-cyber-blue to-cyber-green p-1 animate-glow">
-              <div className="w-full h-full rounded-full bg-cyber-slate flex items-center justify-center">
-                <Shield className="text-4xl sm:text-5xl text-cyber-blue" size={64} />
-              </div>
+              <img 
+                src={profileImage} 
+                alt="Dhruvesh - Cybersecurity Professional" 
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
           </div>
           
