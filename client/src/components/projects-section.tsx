@@ -84,6 +84,28 @@ export default function ProjectsSection() {
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
+          {/* Motion-Verse */}
+          <div className="project-card glass-effect rounded-xl p-6">
+            <div className="text-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Search className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-indigo-400">Motion-Verse</h3>
+              <p className="text-slate-400 text-sm">Movement Analytics Platform</p>
+            </div>
+            <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+              Advanced motion tracking and analytics platform with real-time data visualization and movement pattern analysis.
+            </p>
+            <div className="flex gap-2">
+              <Button size="sm" className="flex-1 bg-indigo-500 hover:bg-indigo-600 text-white">
+                Demo
+              </Button>
+              <Button size="sm" variant="outline" className="flex-1 border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white">
+                Code
+              </Button>
+            </div>
+          </div>
+          
           {/* Secure Drive */}
           <div className="project-card glass-effect rounded-xl p-6">
             <div className="text-center mb-4">
