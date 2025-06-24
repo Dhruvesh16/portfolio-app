@@ -50,8 +50,8 @@ export default function AboutSection() {
               </div>
               <div className="glass-effect rounded-xl p-6 text-center">
                 <Smartphone className="mx-auto text-cyber-blue mb-3" size={32} />
-                <h4 className="font-bold text-lg mb-2">Android Dev</h4>
-                <p className="text-slate-400 text-sm">Native Mobile Applications</p>
+                <h4 className="font-bold text-lg mb-2">Operating Systems</h4>
+                <p className="text-slate-400 text-sm">System Administration & Architecture</p>
               </div>
               <div className="glass-effect rounded-xl p-6 text-center">
                 <Wrench className="mx-auto text-cyber-green mb-3" size={32} />

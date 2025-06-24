@@ -35,7 +35,7 @@ export default function HeroSection() {
           <div className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-8 space-y-2">
             <div className="animate-float">Jr. Penetration Tester</div>
             <div className="animate-float" style={{ animationDelay: "0.5s" }}>Full-Stack Developer</div>
-            <div className="animate-float" style={{ animationDelay: "1s" }}>Operating Systems</div>
+            <div className="animate-float" style={{ animationDelay: "1s" }}>Android Developer</div>
           </div>
           
           <p className="text-lg sm:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
