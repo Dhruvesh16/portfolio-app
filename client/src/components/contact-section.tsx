@@ -5,8 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
 interface ContactFormData {
   name: string;
@@ -24,34 +22,39 @@ export default function ContactSection() {
     message: ""
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject || "Contact from Portfolio");
+    const body = encodeURIComponent(
+      `Hi Dhruvesh,\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}\n\n` +
+      `Best regards,\n${formData.name}`
+    );
+    
+    const mailtoLink = `mailto:dhruvesh3466@protonmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    toast({
+      title: "Opening email client...",
+      description: "Your default email application will open with the message pre-filled.",
+    });
+    
+    // Reset form after a short delay
+    setTimeout(() => {
       setFormData({ name: "", email: "", subject: "", message: "" });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Failed to send message",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    }
-  });
+    }, 1000);
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    contactMutation.mutate(formData);
   };
 
   return (
@@ -166,17 +169,10 @@ export default function ContactSection() {
               </div>
               <Button 
                 type="submit" 
-                disabled={contactMutation.isPending}
                 className="w-full bg-gradient-to-r from-cyber-blue to-cyber-green hover:from-blue-600 hover:to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
-                {contactMutation.isPending ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <Send className="mr-2" size={18} />
-                    Send Message
-                  </>
-                )}
+                <Send className="mr-2" size={18} />
+                Send Message
               </Button>
             </form>
           </div>
